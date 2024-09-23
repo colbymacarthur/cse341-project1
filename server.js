@@ -15,5 +15,4 @@ mongodb.initDb((err) => {
             console.log(`Database is listening and running on ${port}`);
         })
     }
-});
-
+}); 
