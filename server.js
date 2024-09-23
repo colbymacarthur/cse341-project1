@@ -1,15 +1,19 @@
 const express = require('express');
-const mongodb = require('./data/database.js'); 
+const mongodb = require('./data/database');
 const app = express();
 
 const port = process.env.PORT || 3000;
 
-app.use('/', require('./routes'));
+app.use('/', require('./routes/index'));
 
 mongodb.initDb((err) => {
-    if(err) {
+    if (err) {
         console.log(err);
-        process.exit(1);
+    } 
+    else {
+        app.listen(port, () => {
+            console.log(`Database is listening and running on ${port}`);
+        })
     }
-    else {app.listen(port, () => {console.log(`Database connected and listening on port ${port}`)});}
 });
+
