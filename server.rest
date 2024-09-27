@@ -7,4 +7,8 @@ GET http://localhost:3000/users
 GET http://localhost:3000/users/66ef27987e12e4c9ef83c827
 
 // render
+### Get all users
+GET https://cse341-project1-1-6d6g.onrender.com/users
 
+### Get single user
+GET https://cse341-project1-1-6d6g.onrender.com/users/66ef291a7e12e4c9ef83c828
