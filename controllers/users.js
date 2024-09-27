@@ -10,7 +10,8 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
-    const userId = new ObjectId(req.params.id);
+    const userId = ObjectId.createFromHexString(req.params.id);
+    console.log(userId);
     const result = await mongodb.getDatabase().db().collection('contacts').find({_id: userId});
     result.toArray().then((users) => {
         res.setHeader('Content-Type', 'application/json');
@@ -21,4 +22,4 @@ const getSingle = async (req, res) => {
 module.exports = {
     getAll,
     getSingle
-}
+};
